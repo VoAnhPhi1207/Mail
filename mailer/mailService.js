@@ -10,13 +10,13 @@ console.log('EMAIL_PASS:', process.env.EMAIL_PASS);
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: 'ulatroithatlavailon@gmail.com',
+        pass: "yjap buix iyom brvc",
     },
 });
 
 function sendWelcomeEmail(to, name, confirmLink) {
-    const templatePath = path.join(__dirname, '../template/invoice.html');
+    const templatePath = path.join(__dirname, '../template/OTP.html');
     const source = fs.readFileSync(templatePath, 'utf8');
     const compiledTemplate = handlebars.compile(source);
     const htmlToSend = compiledTemplate({ name, confirm_link: confirmLink });
